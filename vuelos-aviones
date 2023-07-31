@@ -1,0 +1,44 @@
+
+#Diccionario:
+vuelos ={}
+
+#Funciones:
+def agregar_vuelo():
+    numero_vuelo= input("Ingrese Numero de Nuevo Vuelo:")
+    destino= input("Ingrese Destino:")
+    hora_salida= input("Ingrese Hora de Salida(Formato hora ej= 15:30:")
+    vuelos[numero_vuelo]=[destino, hora_salida]
+    
+# ejvuelos={"numero_vuelo":["destino", "hora_salida"]}
+# Elegi el numero de vuelo como llave ya que es unico e irrepetible ,
+#los destinos y las horas de salidas pueden ser repetidos y modificables por esos son los valores.
+
+def actualizar_hora_salida():
+    numero_vuelo= input("Ingrese Numero de Vuelo a modificar hora:")
+    nueva_hora_salida= input("Ingrese Nueva Hora de Salida:")
+    vuelos[numero_vuelo][1]= nueva_hora_salida
+    print("Modificado con exito")
+    print("Nuevo Horario",vuelos[numero_vuelo])
+
+def ver_vuelos():
+    for k,v in vuelos.items():
+        print("N° Vuelo:",k,"-->Destino, Hora Salida:",v)
+    
+
+#Programa Principal:
+op= ""
+while op!= "s":
+    print("Sistemas de vuelos")
+    print("********  MENU  ***********:")
+    print("a= Agregar Vuelo, h= Modificar Hora Salida, v= Ver Vuelos")
+    print("s= Salir")
+    op= input("Ingrese Opcion:")
+    if op== "a":
+        agregar_vuelo()
+    elif op== "h":
+        actualizar_hora_salida()
+    elif op== "v":
+        ver_vuelos()
+print("************************")
+print("A salido del sistema")
+print("Gracias por utilizar: Sistemas de vuelos")
